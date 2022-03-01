@@ -54,22 +54,30 @@
             android:layout_height="0px"
             android:layout_weight="1">
 
-            <Button android:layout_height="match_parent"
+            <Button
+                android:id="@+id/btn1"
+                android:layout_height="match_parent"
                 android:text="1"
                 android:layout_margin="2dp"
                 android:onClick="onClick"/>
 
-            <Button android:layout_height="match_parent"
+            <Button
+                android:id="@+id/btn2"
+                android:layout_height="match_parent"
                 android:text="2"
                 android:layout_margin="2dp"
                 android:onClick="onClick"/>
 
-            <Button android:layout_height="match_parent"
+            <Button
+                android:id="@+id/btn3"
+                android:layout_height="match_parent"
                 android:text="3"
                 android:layout_margin="2dp"
                 android:onClick="onClick"/>
 
-            <Button android:layout_height="match_parent"
+            <Button
+                android:id="@+id/btnAdd"
+                android:layout_height="match_parent"
                 android:text="+"
                 android:layout_margin="2dp"
                 android:onClick="onClick"/>
@@ -79,20 +87,28 @@
             android:layout_height="0px"
             android:layout_weight="1">
 
-            <Button android:layout_height="match_parent"
+            <Button
+                android:id="@+id/btn4"
+                android:layout_height="match_parent"
                 android:text="4"
                 android:layout_margin="2dp"
                 android:onClick="onClick"/>
-            <Button android:layout_height="match_parent"
+            <Button
+                android:id="@+id/btn5"
+                android:layout_height="match_parent"
                 android:text="5"
                 android:layout_margin="2dp"
                 android:onClick="onClick"/>
-            <Button android:layout_height="match_parent"
+            <Button
+                android:id="@+id/btn6"
+                android:layout_height="match_parent"
                 android:text="6"
                 android:layout_margin="2dp"
                 android:onClick="onClick"/>
 
-            <Button android:layout_height="match_parent"
+            <Button
+                android:id="@+id/btnMinus"
+                android:layout_height="match_parent"
                 android:text="-"
                 android:layout_margin="2dp"
                 android:onClick="onClick"/>
@@ -102,20 +118,29 @@
             android:layout_height="0px"
             android:layout_weight="1">
 
-            <Button android:layout_height="match_parent"
+            <Button
+                android:id="@+id/btn7"
+                android:layout_height="match_parent"
                 android:text="7"
                 android:layout_margin="2dp"
                 android:onClick="onClick"/>
-            <Button android:layout_height="match_parent"
+            <Button
+                android:id="@+id/btn8"
+                android:layout_height="match_parent"
                 android:text="8"
                 android:layout_margin="2dp"
                 android:onClick="onClick"/>
-            <Button android:layout_height="match_parent"
+            <Button
+                android:id="@+id/btn9"
+                android:layout_height="match_parent"
                 android:text="9"
                 android:layout_margin="2dp"
                 android:onClick="onClick"/>
 
-            <Button android:layout_height="match_parent"
+            <!--android:id="@+id/btnSubtract"-->
+            <Button
+                android:id="@+id/btnMultiple"
+                android:layout_height="match_parent"
                 android:text="*"
                 android:layout_margin="2dp"
                 android:onClick="onClick"/>
@@ -126,17 +151,21 @@
             android:layout_weight="1">
 
             <Button
-                android:id="@+id/abobus"
+                android:id="@+id/btn0"
                 android:layout_height="match_parent"
                 android:text="0"
                 android:layout_margin="2dp"
                 android:onClick="onClick"/>
-            <Button android:layout_height="match_parent"
+            <Button
+                android:id="@+id/btnEqualy"
+                android:layout_height="match_parent"
                 android:text="="
                 android:layout_margin="2dp"
                 android:onClick="onClick"
                 android:layout_span="2"/>
-            <Button android:layout_height="match_parent"
+            <Button
+                android:id="@+id/btnDevide"
+                android:layout_height="match_parent"
                 android:text="/"
                 android:layout_margin="2dp"
                 android:onClick="onClick"
