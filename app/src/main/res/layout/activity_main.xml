@@ -9,7 +9,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/tvOutput"
+        android:id="@+id/tvOutputHistory"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginLeft="5dp"
@@ -20,7 +20,7 @@
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/tvOutputHistory"
+        android:id="@+id/tvOutput"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginLeft="5dp"
