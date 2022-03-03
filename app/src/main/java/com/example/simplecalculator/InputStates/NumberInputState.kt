@@ -1,27 +1,26 @@
 package com.example.simplecalculator.InputStates
 
+import androidx.core.text.isDigitsOnly
+import com.example.simplecalculator.AnotherOperation
 import com.example.simplecalculator.ExpressionStringParser
 import com.example.simplecalculator.InputState
 
-class NumberInputState(expressionStringParser: ExpressionStringParser) :
-    InputState(expressionStringParser) {
+class NumberInputState(mutableExpressionList: MutableList<String>, statesList: List<InputState>) :
+    InputState(mutableExpressionList, statesList), AnotherOperation {
 
-    override fun isRefersState(calculatorData: String): Pair<InputState, String> {
-        if(!calculatorData[0].isDigit()) {
-            val operatorState = OperatorInputState(expressionStringParser)
-            operatorState.isRefersState(calculatorData)
+    /*statesList =
+        listOf<InputState>(DotInputState(expressionStringParser), OperatorInputState(expressionStringParser))*/
 
-            return Pair<InputState, String>(
-                operatorState,
-                calculatorData
-            )
-        }
+    override fun isTriggered(char: Char): Boolean = char.isDigit()
 
-        if(expressionStringParser.firstValue == "")
-            expressionStringParser.firstValue += calculatorData
+    override fun getDefaultReturnState(): InputState = NumberInputState(mutableExpressionList, statesList)
+
+    override fun addNewOperation(operation: String) {
+        val lastStringExpression = mutableExpressionList.last()
+
+        if(lastStringExpression.last() == '.' || lastStringExpression.last().isDigit())
+            mutableExpressionList[mutableExpressionList.size-1] += operation
         else
-            expressionStringParser.secondValue += calculatorData
-
-        return Pair<InputState, String>(NumberInputState(expressionStringParser), calculatorData)
+            mutableExpressionList.add(operation)
     }
 }
