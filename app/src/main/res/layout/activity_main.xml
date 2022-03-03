@@ -46,7 +46,17 @@
                 android:id="@+id/btnClear"
                 android:layout_height="match_parent"
                 android:onClick="onClick"
+                android:layout_weight="1"
+                android:layout_marginRight="3dp"
                 android:text="AC" />
+
+            <Button
+                android:id="@+id/btnDot"
+                android:layout_height="match_parent"
+                android:onClick="onClick"
+                android:layout_weight="1"
+                android:layout_marginRight="3dp"
+                android:text="." />
 
         </TableRow>
 
