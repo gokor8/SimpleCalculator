@@ -8,6 +8,7 @@ import android.widget.TextView
 import com.example.simplecalculator.InputStates.DotInputState
 import com.example.simplecalculator.InputStates.NumberInputState
 import com.example.simplecalculator.InputStates.OperatorInputState
+import com.example.simplecalculator.InputStates.StartState
 
 var tvOutput: TextView? = null
 var tvOutputHistory: TextView? = null
@@ -33,9 +34,25 @@ class MainActivity : AppCompatActivity() {
         tvOutput = findViewById(R.id.tvOutput)
         tvOutputHistory = findViewById(R.id.tvOutputHistory)
 
-        val buttonAC = findViewById<Button>(R.id.btnClear)
+        val buttonC = findViewById<Button>(R.id.btnClear)
+        val buttonEquals = findViewById<Button>(R.id.btnEquals)
+        val buttonAC = findViewById<Button>(R.id.btnClearAll)
+
+        buttonEquals.setOnClickListener {
+            tvOutput?.let {
+                it.text = ""
+                expressionStringParser?.mutableExpressionList?.clear()
+                expressionStringParser?.mutableExpressionList?.add("")
+            }
+        }
+        buttonC.setOnClickListener {
+            tvOutput?.text = ""
+            expressionStringParser?.mutableExpressionList?.clear()
+            expressionStringParser?.mutableExpressionList?.add("")
+        }
         buttonAC.setOnClickListener {
             tvOutput?.text = ""
+            tvOutputHistory?.text = ""
             expressionStringParser?.mutableExpressionList?.clear()
             expressionStringParser?.mutableExpressionList?.add("")
         }

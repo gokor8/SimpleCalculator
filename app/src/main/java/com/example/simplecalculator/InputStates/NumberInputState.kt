@@ -17,7 +17,8 @@ class NumberInputState(mutableExpressionList: MutableList<String>, statesList: L
     override fun addNewOperation(operation: String) {
         val lastStringExpression = mutableExpressionList.last()
 
-        if(lastStringExpression.isEmpty() || lastStringExpression.lastOrNull() == '.' || lastStringExpression.last().isDigit())
+        if(lastStringExpression.isEmpty() || lastStringExpression.lastOrNull() == '.'
+            || lastStringExpression.last().isDigit())
             mutableExpressionList[mutableExpressionList.size-1] += operation
         else
             mutableExpressionList.add(operation)

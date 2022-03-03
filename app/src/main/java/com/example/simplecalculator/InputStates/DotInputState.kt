@@ -10,7 +10,8 @@ class DotInputState(expressionList: MutableList<String>, statesList: List<InputS
     constructor(mutableExpressionList: MutableList<String>) : this(mutableExpressionList, listOf())
 
     override fun isTriggered(char: Char) =
-        char == '.' && mutableExpressionList.last().last().isDigit()
+        char == '.' && mutableExpressionList.last().isNotEmpty()
+                && mutableExpressionList.last().last().isDigit()
                 && !mutableExpressionList.last().contains('.')
 
     override fun getDefaultReturnState(): InputState = DotInputState(mutableExpressionList, statesList)
