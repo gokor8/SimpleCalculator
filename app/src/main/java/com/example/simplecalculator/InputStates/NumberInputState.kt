@@ -8,8 +8,7 @@ import com.example.simplecalculator.InputState
 class NumberInputState(mutableExpressionList: MutableList<String>, statesList: List<InputState>) :
     InputState(mutableExpressionList, statesList), AnotherOperation {
 
-    /*statesList =
-        listOf<InputState>(DotInputState(expressionStringParser), OperatorInputState(expressionStringParser))*/
+    constructor(mutableExpressionList: MutableList<String>) : this(mutableExpressionList, listOf())
 
     override fun isTriggered(char: Char): Boolean = char.isDigit()
 
@@ -18,7 +17,7 @@ class NumberInputState(mutableExpressionList: MutableList<String>, statesList: L
     override fun addNewOperation(operation: String) {
         val lastStringExpression = mutableExpressionList.last()
 
-        if(lastStringExpression.last() == '.' || lastStringExpression.last().isDigit())
+        if(lastStringExpression.isEmpty() || lastStringExpression.lastOrNull() == '.' || lastStringExpression.last().isDigit())
             mutableExpressionList[mutableExpressionList.size-1] += operation
         else
             mutableExpressionList.add(operation)

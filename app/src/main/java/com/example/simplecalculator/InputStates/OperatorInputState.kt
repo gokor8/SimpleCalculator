@@ -1,30 +1,23 @@
 package com.example.simplecalculator.InputStates
 
+import com.example.simplecalculator.AnotherOperation
 import com.example.simplecalculator.ExpressionStringParser
 import com.example.simplecalculator.InputState
 
-open class OperatorInputState(expressionStringParser: ExpressionStringParser) :
-    InputState(expressionStringParser) {
+open class OperatorInputState(mutableExpressionList: MutableList<String>, statesList: List<InputState>, )
+    : InputState(mutableExpressionList, statesList),
+    AnotherOperation {
 
-    override fun isRefersState(calculatorData: String): Pair<InputState, String> {
+    constructor(mutableExpressionList: MutableList<String>) : this(mutableExpressionList, listOf())
 
-        if (expressionStringParser.secondValue != "") {
-            expressionStringParser.firstValue = expressionStringParser.getAnswer()
-            expressionStringParser.secondValue = ""
-        }
+    open val operationsList = listOf('+', '-', '/', '*')
 
-        if (calculatorData[0].isDigit()) {
-            val numberInput = NumberInputState(expressionStringParser)
-            numberInput.isRefersState(calculatorData)
+    override fun isTriggered(char: Char): Boolean =
+        operationsList.contains(char) && mutableExpressionList.last().last().isDigit()
 
-            return Pair<InputState, String>(
-                numberInput,
-                calculatorData
-            )
-        }
-        else
-            expressionStringParser.mathSymbol = calculatorData[0]
+    override fun getDefaultReturnState(): InputState = OperatorInputState(mutableExpressionList, statesList)
 
-        return Pair<InputState, String>(OperatorInputState(expressionStringParser), "")
+    override fun addNewOperation(operation: String) {
+        mutableExpressionList.add(operation)
     }
 }

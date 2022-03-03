@@ -7,6 +7,8 @@ import com.example.simplecalculator.InputState
 
 class DotInputState(expressionList: MutableList<String>, statesList: List<InputState>) : InputState(expressionList,statesList), AnotherOperation {
 
+    constructor(mutableExpressionList: MutableList<String>) : this(mutableExpressionList, listOf())
+
     override fun isTriggered(char: Char) =
         char == '.' && mutableExpressionList.last().last().isDigit()
                 && !mutableExpressionList.last().contains('.')
