@@ -13,8 +13,9 @@ open class OperatorInputState(mutableExpressionList: MutableList<String>, states
     open val operationsList = listOf('+', '-', '/', '*')
 
     override fun isTriggered(char: Char): Boolean =
-        operationsList.contains(char) && mutableExpressionList.last().isNotEmpty()
-                && mutableExpressionList.last().last().isDigit()
+        operationsList.contains(char) && (mutableExpressionList.last().isNotEmpty()
+                && mutableExpressionList.last().last().isDigit())
+                || (mutableExpressionList.last().isEmpty() && char == '-')
 
     override fun getDefaultReturnState(): InputState = OperatorInputState(mutableExpressionList, statesList)
 

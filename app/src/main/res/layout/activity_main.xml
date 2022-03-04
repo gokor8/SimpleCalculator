@@ -47,7 +47,7 @@
                 android:onClick="onClick"
                 android:layout_weight="1"
                 android:layout_span="2"
-                android:layout_marginRight="1dp"
+                android:layout_margin="2dp"
                 android:text="AC" />
 
             <Button
@@ -55,7 +55,7 @@
                 android:layout_height="match_parent"
                 android:onClick="onClick"
                 android:layout_weight="1"
-                android:layout_marginRight="1dp"
+                android:layout_margin="2dp"
                 android:text="C" />
 
             <Button
@@ -64,7 +64,7 @@
                 android:onClick="onClick"
                 android:layout_weight="1"
                 android:layout_column="3"
-                android:layout_marginRight="4dp"
+                android:layout_margin="2dp"
                 android:text="." />
 
         </TableRow>
