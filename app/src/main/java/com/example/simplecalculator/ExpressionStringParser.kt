@@ -29,6 +29,9 @@ open class ExpressionStringParser(open val mutableExpressionList: MutableList<St
             }
         }
 
+        if(answer % 1 == 0f)
+            return answer.toInt().toString()
+
         return answer.toString()
     }
 
