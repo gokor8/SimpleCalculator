@@ -10,13 +10,13 @@ import com.example.simplecalculator.InputStates.NumberInputState
 import com.example.simplecalculator.InputStates.OperatorInputState
 import com.example.simplecalculator.InputStates.StartState
 
-var tvOutput: TextView? = null
-var tvOutputHistory: TextView? = null
-
-var expressionStringParser: ExpressionStringParser? = null
-var currentState: InputState? = null
-
 class MainActivity : AppCompatActivity() {
+
+    var tvOutput: TextView? = null
+    var tvOutputHistory: TextView? = null
+
+    var expressionStringParser: ExpressionStringParser? = null
+    var currentState: InputState? = null
 
     init {
         expressionStringParser = ExpressionStringParser()
